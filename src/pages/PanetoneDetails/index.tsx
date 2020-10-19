@@ -1,17 +1,20 @@
-import React from "react";
+import React from 'react';
+import { useParams } from 'react-router-dom';
 
-import { Container } from "./styles";
+import { Container } from './styles';
 
-interface PanetoneDetailsProps {
-  id: number;
+interface PanetoneRouterProps {
+  id: string;
 }
 
-const PanetoneDetails: React.FC<PanetoneDetailsProps> = ({ id }) => {
+const Panetone: React.FC = () => {
+  const { id } = useParams<PanetoneRouterProps>();
+
   return (
     <Container>
-      <h1>PanetoneDetails Page: {id}</h1>
+      <h1>Panetone Page: {id}</h1>
     </Container>
   );
 };
 
-export default PanetoneDetails;
+export default Panetone;
