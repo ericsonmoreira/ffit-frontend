@@ -1,11 +1,15 @@
-import React from 'react';
+import React from "react";
 
-import { Container } from './styles';
+import { Container } from "./styles";
 
-const PanetoneDetails: React.FC = () => {
+interface PanetoneDetailsProps {
+  id: number;
+}
+
+const PanetoneDetails: React.FC<PanetoneDetailsProps> = ({ id }) => {
   return (
     <Container>
-      <h1>PanetoneDetails Page</h1>
+      <h1>PanetoneDetails Page: {id}</h1>
     </Container>
   );
 };
