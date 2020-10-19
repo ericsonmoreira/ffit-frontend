@@ -1,5 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
+import colors from './colors';
+
 export const GlobalStyle = createGlobalStyle`
   * {
     margin: 0;
@@ -7,8 +9,8 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
   body {
-    color: #121212;
-    background: #EBF2F5;
+    color: ${colors.primary};
+    background: ${colors.bgColor};
   }
   body, input, button, textarea {
     font: 600 18px 'Nunito', sans-serif;

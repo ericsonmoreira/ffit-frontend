@@ -1,8 +1,8 @@
-import React from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import Landing from "./pages/Landing";
-import PanetoneDetails from "./pages/PanetoneDetails";
+import React from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Landing from './pages/Landing';
+import Panetone from './pages/Panetone';
 
 const Routes: React.FC = () => {
   return (
@@ -10,7 +10,7 @@ const Routes: React.FC = () => {
       <Switch>
         <Route path="/" component={Landing} exact />
         <Route path="/app" component={Home} />
-        <Route path="/panetones/:id" component={PanetoneDetails} />
+        <Route path="/panetones/:id" component={Panetone} />
       </Switch>
     </BrowserRouter>
   );
