@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import colors from '../../styles/colors';
 
 export const Container = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 100vw;
@@ -36,6 +37,21 @@ export const PanetoneItem = styled.div`
   background: ${colors.quaternary};
   padding: 32px;
   border-radius: 20px;
+`;
+
+export const PanetoneLabel = styled.div`
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  strong {
+    font-size: 24px;
+    font-weight: 800;
+  }
+  section {
+    font-size: 16px;
+    font-weight: 700;
+    color: ${colors.terciary};
+  }
 `;
 
 export const GoToDetailsButton = styled(Link)`

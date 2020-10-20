@@ -4,7 +4,7 @@ import IPanetone from '../../@types/IPanetone';
 import SideBar from '../../components/SideBar';
 import api from '../../services/api';
 
-import { Container } from './styles';
+import { Container, Content, Details } from './styles';
 
 interface PanetoneRouterProps {
   id: string;
@@ -24,9 +24,12 @@ const Panetone: React.FC = () => {
   return (
     <Container>
       <SideBar />
-      <h1>Panetone Page: {panetone.id}</h1>
-      <h2>Nome: {panetone.name}</h2>
-      <img src={panetone.url} alt="panetone"/>
+      <Content>
+        <Details>
+          <h1>{panetone.name}</h1>
+          <img src={panetone.url} alt="panetone"/>
+        </Details>
+      </Content>
     </Container>
   );
 };

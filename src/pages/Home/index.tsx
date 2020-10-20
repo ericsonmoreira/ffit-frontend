@@ -7,6 +7,7 @@ import {
   Container,
   Content,
   PanetonesList,
+  PanetoneLabel,
   PanetoneItem,
   GoToDetailsButton,
 } from './styles';
@@ -14,13 +15,24 @@ import {
 import { FiMoreHorizontal } from 'react-icons/fi';
 
 const Home: React.FC = () => {
+  const [loading, setLoading] = useState(true);
+
   const [panetones, setPanetones] = useState<IPanetone[]>([]);
 
   useEffect(() => {
-    api.get('/panetones').then((response) => {
-      setPanetones((old) => [...old, ...response.data]);
-    });
-  }, [setPanetones]);
+    try {
+      setLoading(true);
+      api.get('/panetones').then((response) => {
+        setPanetones((old) => [...old, ...response.data]);
+      });
+    } catch (erro) {
+      console.log(console.error(erro));
+    } finally {
+      setLoading(false);
+    }
+  }, []);
+
+  if (loading) return null;
 
   return (
     <Container>
@@ -30,7 +42,10 @@ const Home: React.FC = () => {
         <PanetonesList>
           {panetones.map((panetone) => (
             <PanetoneItem key={panetone.id}>
-              <strong>{panetone.name}</strong>
+              <PanetoneLabel>
+                <strong>{panetone.name}</strong>
+                <section>Marca: {panetone.marca.name}</section>
+              </PanetoneLabel>
               <GoToDetailsButton to={`/panetones/${panetone.id}`}>
                 <FiMoreHorizontal size={24} color="rgba(0,0,0, 0.8)" />
               </GoToDetailsButton>
