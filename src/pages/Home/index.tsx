@@ -1,11 +1,15 @@
 import React from 'react';
+import SideBar from '../../components/SideBar';
 
-import { Container } from './styles';
+import { Container, Content } from './styles';
 
 const Home: React.FC = () => {
   return (
     <Container>
-      <h1>Home Page</h1>
+      <SideBar />
+      <Content>
+        <h1>Home Page</h1>
+      </Content>
     </Container>
   );
 };
