@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 import colors from '../../styles/colors';
@@ -25,5 +26,25 @@ export const PanetonesList = styled.div`
 `;
 
 export const PanetoneItem = styled.div`
-  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: ${colors.quaternary};
+  padding: 32px;
+  border-radius: 20px;
+`;
+
+export const GoToDetailsButton = styled(Link)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background: transparent;
+  transition: background-color 0.2s;
+
+  :hover {
+    background: ${colors.secondary};
+  }
 `;
