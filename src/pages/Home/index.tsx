@@ -8,7 +8,7 @@ const Home: React.FC = () => {
     <Container>
       <SideBar />
       <Content>
-        <h1>Home Page</h1>
+        <h1>Catalottone</h1>
       </Content>
     </Container>
   );
