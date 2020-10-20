@@ -8,6 +8,7 @@ interface IPanetone {
   packing: number;
   costbenefit: number;
   grams: number;
+  url: string;
 }
 
 export default IPanetone;

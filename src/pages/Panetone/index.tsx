@@ -19,13 +19,14 @@ const Panetone: React.FC = () => {
     api.get(`/panetones/${id}`).then((response) => {
       setPanetone(response.data);
     });
-  }, []);
+  }, [id]);
 
   return (
     <Container>
       <SideBar />
       <h1>Panetone Page: {panetone.id}</h1>
       <h2>Nome: {panetone.name}</h2>
+      <img src={panetone.url} alt="panetone"/>
     </Container>
   );
 };
