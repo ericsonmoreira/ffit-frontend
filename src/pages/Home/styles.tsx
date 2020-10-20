@@ -23,6 +23,10 @@ export const PanetonesList = styled.div`
   padding: 64px 80px;
   border-radius: 20px;
   border: 1px solid ${colors.terciary};
+
+  div + div {
+    margin-top: 20px;
+  }
 `;
 
 export const PanetoneItem = styled.div`

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Panetone from '../../@types/Panetone';
+import IPanetone from '../../@types/IPanetone';
 import SideBar from '../../components/SideBar';
 import api from '../../services/api';
 
@@ -14,7 +14,7 @@ import {
 import { FiMoreHorizontal } from 'react-icons/fi';
 
 const Home: React.FC = () => {
-  const [panetones, setPanetones] = useState<Panetone[]>([]);
+  const [panetones, setPanetones] = useState<IPanetone[]>([]);
 
   useEffect(() => {
     api.get('/panetones').then((response) => {
