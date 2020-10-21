@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import IPanetone from '../../@types/IPanetone';
 import SideBar from '../../components/SideBar';
 import getFinalScore from '../../helpers/finalScore';
+import getFormatCurrencyBR from '../../helpers/formatCurrency';
 import api from '../../services/api';
 
 import { Container, Content, Title, Details, Info, FinalScore } from './styles';
@@ -49,11 +50,11 @@ const Panetone: React.FC = () => {
                   <strong>Características</strong>
                 </li>
                 <li>Peso: {panetone.grams}g</li>
-                <li>Preço: R$ {panetone.price.toLocaleString()}</li>
+                <li>Preço: {getFormatCurrencyBR(panetone.price)}</li>
                 <li>Sabor: {panetone.flavor}</li>
                 <li>Textura: {panetone.texture}</li>
                 <li>Recheio: {panetone.filling}</li>
-                <li>Enbalagem: {panetone.packing}</li>
+                <li>Embalagem: {panetone.packing}</li>
                 <li>Custo-benefício: {panetone.costbenefit}</li>
               </ul>
               <FinalScore>
