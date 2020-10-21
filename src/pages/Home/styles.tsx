@@ -79,7 +79,7 @@ export const SearchInput = styled.input`
   border-radius: 25px;
   padding: 0 20px;
   outline: none;
-  color:${colors.secondary};
+  color: ${colors.secondary};
   font-weight: 700;
   border: none;
 `;

@@ -70,6 +70,7 @@ const Home: React.FC = () => {
             ))}
         </PanetonesList>
       </Content>
+      
     </Container>
   );
 };

@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import styled, { css } from 'styled-components';
 
 import colors from '../../styles/colors';
 
@@ -19,7 +20,7 @@ export const Logo = styled.img`
   height: 48px;
 `;
 
-export const GoBackButton = styled.button`
+const buttonCss = css`
   width: 48px;
   height: 48px;
   display: flex;
@@ -36,3 +37,13 @@ export const GoBackButton = styled.button`
     background: ${colors.blue};
   }
 `;
+
+export const GoAddButton = styled(Link)`
+  ${buttonCss}
+  margin-bottom: 20px;
+`;
+
+export const GoBackButton = styled.button`
+  ${buttonCss}
+`;
+
