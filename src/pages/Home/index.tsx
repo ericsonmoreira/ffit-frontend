@@ -42,10 +42,13 @@ const Home: React.FC = () => {
         <PanetonesList>
           {panetones.map((panetone) => (
             <PanetoneItem key={panetone.id}>
-              <PanetoneLabel>
-                <strong>{panetone.name}</strong>
-                <section>Marca: {panetone.marca.name}</section>
-              </PanetoneLabel>
+              <section>
+                <img src={panetone.url} alt="panetone" />
+                <PanetoneLabel>
+                  <strong>{panetone.name}</strong>
+                  <section>Marca: {panetone.marca.name}</section>
+                </PanetoneLabel>
+              </section>
               <GoToDetailsButton to={`/panetones/${panetone.id}`}>
                 <FiMoreHorizontal size={24} color="rgba(0,0,0, 0.8)" />
               </GoToDetailsButton>

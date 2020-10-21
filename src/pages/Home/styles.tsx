@@ -37,16 +37,32 @@ export const PanetoneItem = styled.div`
   background: ${colors.quaternary};
   padding: 32px;
   border-radius: 20px;
+
+  section {
+    display: flex;
+    align-items: center;
+  }
+
+  img {
+    height: 50px;
+    width: 50px;
+    border-radius: 20px;
+    object-fit: cover;
+    margin-right: 20px;
+    background: ${colors.secondary};
+  }
 `;
 
 export const PanetoneLabel = styled.div`
   display: flex;
   flex-direction: column;
   text-align: left;
+
   strong {
     font-size: 24px;
     font-weight: 800;
   }
+
   section {
     font-size: 16px;
     font-weight: 700;
