@@ -1,0 +1,278 @@
+{
+  "panetones": [
+    {
+      "id": 1,
+      "name": "Panettone de Cocada da Sodiê",
+      "price": 54.9,
+      "flavor": 3,
+      "texture": 3,
+      "filling": 3,
+      "packing": 3.6,
+      "costbenefit": 3,
+      "grams": 700,
+      "url": "https://img.huffingtonpost.com/asset/5dfd2b732400001e135a4020.jpeg?ops=scalefit_720_noupscale&format=webp",
+      "marca": {
+        "id": 1,
+        "name": "Sodiê"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Panettone sabor Alfajor",
+      "price": 21.99,
+      "flavor": 3,
+      "texture": 3,
+      "filling": 3,
+      "packing": 3,
+      "costbenefit": 4,
+      "grams": 530,
+      "url": "https://img.huffingtonpost.com/asset/5dfd2c8f250000c70798ed88.png?ops=scalefit_720_noupscale&format=webp",
+      "marca": {
+        "id": 2,
+        "name": "Arcor"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Panettone de Chocolate",
+      "price": 22.9,
+      "flavor": 3,
+      "texture": 4,
+      "filling": 3,
+      "packing": 2.6,
+      "costbenefit": 3.6,
+      "grams": 500,
+      "url": "https://img.huffingtonpost.com/asset/5dfd2cd3240000da115a4022.jpeg?ops=scalefit_720_noupscale&format=webp",
+      "marca": {
+        "id": 3,
+        "name": "Village"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Panettone de frutas cristalizadas",
+      "price": 14.99,
+      "flavor": 3.5,
+      "texture": 4,
+      "filling": 3.5,
+      "packing": 3,
+      "costbenefit": 4,
+      "grams": 500,
+      "url": "https://img.huffingtonpost.com/asset/5dfd2d2b250000c70798ed8a.jpeg?ops=scalefit_720_noupscale&format=webp",
+      "marca": {
+        "id": 4,
+        "name": "Bauducco"
+      }
+    },
+    {
+      "id": 5,
+      "name": "Panettone Red Velvet",
+      "price": 57,
+      "flavor": 3.3,
+      "texture": 3.3,
+      "filling": 4,
+      "packing": 4,
+      "costbenefit": 3.6,
+      "grams": 550,
+      "url": "https://img.huffingtonpost.com/asset/5dfd2d6a2400001e135a4024.jpeg?ops=scalefit_720_noupscale&format=webp",
+      "marca": {
+        "id": 5,
+        "name": "Mr. Cheney"
+      }
+    },
+    {
+      "id": 6,
+      "name": "Panettone Sem Adição de Açúcares",
+      "price": 24.9,
+      "flavor": 4.6,
+      "texture": 4.6,
+      "filling": 4.3,
+      "packing": 2.3,
+      "costbenefit": 3.3,
+      "grams": 400,
+      "url": "https://img.huffingtonpost.com/asset/5dfd2da8240000da115a4025.png?ops=scalefit_720_noupscale&format=webp",
+      "marca": {
+        "id": 6,
+        "name": "Linea"
+      }
+    },
+    {
+      "id": 7,
+      "name": "Panettone Dreams 5 Chocolates",
+      "price": 49.9,
+      "flavor": 4.3,
+      "texture": 3.3,
+      "filling": 4,
+      "packing": 4,
+      "costbenefit": 3.6,
+      "grams": 750,
+      "url": "https://img.huffingtonpost.com/asset/5dfd2e91250000d180d30e51.png?ops=scalefit_720_noupscale&format=webp",
+      "marca": {
+        "id": 7,
+        "name": "CacauShow"
+      }
+    },
+    {
+      "id": 8,
+      "name": "Panettone La Creme",
+      "price": 55.9,
+      "flavor": 3.5,
+      "texture": 4.6,
+      "filling": 3.6,
+      "packing": 4,
+      "costbenefit": 3.6,
+      "grams": 650,
+      "url": "https://img.huffingtonpost.com/asset/5dfd2ee9250000b180d30e52.png?ops=scalefit_720_noupscale&format=webp",
+      "marca": {
+        "id": 7,
+        "name": "CacauShow"
+      }
+    },
+    {
+      "id": 9,
+      "name": "Panettone de doce de leite com chocolate meio amargo e gotas de chocolate",
+      "price": 75,
+      "flavor": 3.5,
+      "texture": 5,
+      "filling": 3,
+      "packing": 5,
+      "costbenefit": 3,
+      "grams": 750,
+      "url": "https://img.huffingtonpost.com/asset/5dfd2f38250000d00798ed8c.jpeg?ops=scalefit_720_noupscale&format=webp",
+      "marca": {
+        "id": 8,
+        "name": "Starbucks"
+      }
+    },
+    {
+      "id": 10,
+      "name": "Panettone Trufado Chocolate ao Leite",
+      "price": 119.9,
+      "flavor": 4,
+      "texture": 5,
+      "filling": 4,
+      "packing": 3.6,
+      "costbenefit": 3,
+      "grams": 900,
+      "url": "https://img.huffingtonpost.com/asset/5dfd2f7f250000dd0798ed8d.png?ops=scalefit_720_noupscale&format=webp",
+      "marca": {
+        "id": 9,
+        "name": "Lindt"
+      }
+    },
+    {
+      "id": 11,
+      "name": "Panettone de frutas cristalizadas",
+      "price": 24.9,
+      "flavor": 4,
+      "texture": 4,
+      "filling": 5,
+      "packing": 3,
+      "costbenefit": 4,
+      "grams": 908,
+      "url": "https://img.huffingtonpost.com/asset/5dfd2fe9250000d180d30e55.jpeg?ops=scalefit_720_noupscale&format=webp",
+      "marca": {
+        "id": 3,
+        "name": "Village"
+      }
+    },
+    {
+      "id": 12,
+      "name": "Thunderttone",
+      "price": 64.9,
+      "flavor": 4.3,
+      "texture": 4,
+      "filling": 4.3,
+      "packing": 3.6,
+      "costbenefit": 4,
+      "grams": 800,
+      "url": "https://img.huffingtonpost.com/asset/5dfd30372400001e135a4026.jpeg?ops=scalefit_720_noupscale&format=webp",
+      "marca": {
+        "id": 10,
+        "name": "Outback"
+      }
+    },
+    {
+      "id": 13,
+      "name": "Panettone Limão e Dulce de Leche",
+      "price": 79.9,
+      "flavor": 4.3,
+      "texture": 5,
+      "filling": 4.3,
+      "packing": 5,
+      "costbenefit": 3,
+      "grams": 700,
+      "url": "https://img.huffingtonpost.com/asset/5dfd3093250000d180d30e57.jpeg?ops=scalefit_720_noupscale&format=webp",
+      "marca": {
+        "id": 11,
+        "name": "Havanna"
+      }
+    },
+    {
+      "id": 14,
+      "name": "Panettone Gotas de Chocolate Callebaut",
+      "price": 59.9,
+      "flavor": 4.6,
+      "texture": 5,
+      "filling": 4.6,
+      "packing": 4,
+      "costbenefit": 4,
+      "grams": 500,
+      "url": "https://img.huffingtonpost.com/asset/5dfd312f24000015135a4028.jpeg?ops=scalefit_720_noupscale&format=webp",
+      "marca": {
+        "id": 12,
+        "name": "Sterna Café"
+      }
+    }
+  ],
+  "marcas": [
+    {
+      "id": 1,
+      "name": "Sodiê"
+    },
+    {
+      "id": 2,
+      "name": "Arcor"
+    },
+    {
+      "id": 3,
+      "name": "Village"
+    },
+    {
+      "id": 4,
+      "name": "Bauducco"
+    },
+    {
+      "id": 5,
+      "name": "Mr. Cheney"
+    },
+    {
+      "id": 6,
+      "name": "Linea"
+    },
+    {
+      "id": 7,
+      "name": "CacauShow"
+    },
+    {
+      "id": 8,
+      "name": "Starbucks"
+    },
+    {
+      "id": 9,
+      "name": "Lindt"
+    },
+    {
+      "id": 10,
+      "name": "Outback"
+    },
+    {
+      "id": 11,
+      "name": "Havanna"
+    },
+    {
+      "id": 12,
+      "name": "Sterna Café"
+    }
+  ]
+}

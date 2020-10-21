@@ -22,8 +22,5 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# json-server db.json
-db.json
-
 # envairoment
 .env
