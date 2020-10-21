@@ -4,7 +4,7 @@ import IPanetone from '../../@types/IPanetone';
 import SideBar from '../../components/SideBar';
 import api from '../../services/api';
 
-import { Container, Content, Details } from './styles';
+import { Container, Content, Title, Details, Info } from './styles';
 
 interface PanetoneRouterProps {
   id: string;
@@ -13,23 +13,52 @@ interface PanetoneRouterProps {
 const Panetone: React.FC = () => {
   const { id } = useParams<PanetoneRouterProps>();
 
-  const [panetone, setPanetone] = useState<IPanetone>({} as IPanetone);
+  const [loading, setLoading] = useState(true);
+  const [panetone, setPanetone] = useState<IPanetone>();
 
   useEffect(() => {
-    api.get(`/panetones/${id}`).then((response) => {
-      setPanetone(response.data);
-    });
+    try {
+      setLoading(true);
+      api.get(`/panetones/${id}`).then((response) => {
+        setPanetone(response.data);
+      });
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false);
+    }
   }, [id]);
+
+  if (loading) return null;
 
   return (
     <Container>
       <SideBar />
-      <Content>
-        <Details>
-          <h1>{panetone.name}</h1>
-          <img src={panetone.url} alt="panetone"/>
-        </Details>
-      </Content>
+      {panetone && (
+        <Content>
+          <Title>
+            <h1>{panetone.name}</h1>
+            <h2>Marca: {panetone.marca.name}</h2>
+          </Title>
+          <Details>
+            <img src={panetone.url} alt="panetone" />
+            <Info>
+              <ul>
+                <li>
+                  <strong>Características</strong>
+                </li>
+                <li>Peso: {panetone.grams}g</li>
+                <li>Preço: R$ {panetone.price.toLocaleString()}</li>
+                <li>Sabor: {panetone.flavor}</li>
+                <li>Textura: {panetone.texture}</li>
+                <li>Recheio: {panetone.filling}</li>
+                <li>Enbalagem: {panetone.packing}</li>
+                <li>Custo-benefício: {panetone.costbenefit}</li>
+              </ul>
+            </Info>
+          </Details>
+        </Content>
+      )}
     </Container>
   );
 };

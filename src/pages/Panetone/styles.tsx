@@ -18,18 +18,31 @@ export const Content = styled.div`
   width: 100vw;
   height: 100vh;
   align-items: center;
-  justify-content: center;
+`;
+
+export const Title = styled.div`
+  text-align: left;
 `;
 
 export const Details = styled.div`
   background: ${colors.terciary};
-  padding: 30px;
   border-radius: 20px;
+  width: 500px;
   border: 1px solid ${colors.primary};
 
   img {
-    width: 300px;
+    width: 100%;
+    height: 300px;
     object-fit: cover;
     border-radius: 20px;
+    background: ${colors.secondary}
   }
+
+  ul {
+    list-style: none;
+  }
+`;
+
+export const Info = styled.div`
+  padding: 20px;
 `;
