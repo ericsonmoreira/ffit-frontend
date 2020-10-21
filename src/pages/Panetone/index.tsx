@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import IPanetone from '../../@types/IPanetone';
 import SideBar from '../../components/SideBar';
+import getFinalScore from '../../helpers/finalScore';
 import api from '../../services/api';
 
-import { Container, Content, Title, Details, Info } from './styles';
+import { Container, Content, Title, Details, Info, FinalScore } from './styles';
 
 interface PanetoneRouterProps {
   id: string;
@@ -55,6 +56,10 @@ const Panetone: React.FC = () => {
                 <li>Enbalagem: {panetone.packing}</li>
                 <li>Custo-benefício: {panetone.costbenefit}</li>
               </ul>
+              <FinalScore>
+                <strong>Nota Final</strong>
+                <section>{getFinalScore(panetone)}</section>
+              </FinalScore>
             </Info>
           </Details>
         </Content>

@@ -35,7 +35,7 @@ export const Details = styled.div`
     height: 300px;
     object-fit: cover;
     border-radius: 20px;
-    background: ${colors.secondary}
+    background: ${colors.secondary};
   }
 
   ul {
@@ -44,5 +44,32 @@ export const Details = styled.div`
 `;
 
 export const Info = styled.div`
+  display: flex;
+  justify-content: space-between;
   padding: 20px;
+`;
+
+export const FinalScore = styled.div`
+  display: flex;
+  width: 200px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  strong {
+    font-size: 24px;
+    font-weight: 800;
+  }
+
+  section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    width: 120px;
+    height: 120px;
+    color: ${colors.terciary};
+    background: ${colors.primary};
+    border-radius: 50%;
+  }
 `;
