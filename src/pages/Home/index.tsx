@@ -9,6 +9,7 @@ import {
   PanetonesList,
   PanetoneLabel,
   PanetoneItem,
+  SearchInput,
   GoToDetailsButton,
 } from './styles';
 
@@ -40,6 +41,7 @@ const Home: React.FC = () => {
       <Content>
         <h1>Catalottone</h1>
         <PanetonesList>
+          <SearchInput type="text" placeholder="Busque pelo nome" /> 
           {panetones.map((panetone) => (
             <PanetoneItem key={panetone.id}>
               <section>

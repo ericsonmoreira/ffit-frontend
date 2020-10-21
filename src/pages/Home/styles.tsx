@@ -18,6 +18,7 @@ export const Content = styled.main`
 `;
 
 export const PanetonesList = styled.div`
+  position: relative;
   width: 700px;
   margin: 64px auto;
   background: ${colors.yellow};
@@ -68,6 +69,19 @@ export const PanetoneLabel = styled.div`
     font-weight: 700;
     color: ${colors.terciary};
   }
+`;
+
+export const SearchInput = styled.input`
+  position: absolute;
+  height: 50px;
+  width: calc(100% - 2 * 80px);
+  top: -25px;
+  border-radius: 25px;
+  padding: 0 20px;
+  outline: none;
+  color:${colors.secondary};
+  font-weight: 700;
+  border: none;
 `;
 
 export const GoToDetailsButton = styled(Link)`

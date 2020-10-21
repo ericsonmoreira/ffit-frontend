@@ -27,6 +27,7 @@ export const GoBackButton = styled.button`
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  outline: none;
   border-radius: 50%;
   background: ${colors.yellow};
   transition: background-color 0.2s;
