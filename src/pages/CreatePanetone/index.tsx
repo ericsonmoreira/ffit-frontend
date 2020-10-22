@@ -1,7 +1,10 @@
 import { ErrorMessage, Field, Form, Formik } from 'formik';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import IMarca from '../../@types/IMarca';
+import FieldSetSelect from '../../components/FieldSetSelect';
 import FieldSetText from '../../components/FieldSetText';
 import SideBar from '../../components/SideBar';
+import api from '../../services/api';
 
 import schema from './schemaValidation';
 
@@ -21,6 +24,18 @@ const initialValues = {
 };
 
 const CreatePanetone: React.FC = () => {
+  const [marcas, setMarcas] = useState<IMarca[]>([]);
+
+  useEffect(() => {
+    try {
+      api.get('/marcas').then((response) => {
+        setMarcas((old) => [...old, ...response.data]);
+      });
+    } catch (erro) {
+      console.log(console.error(erro));
+    }
+  }, []);
+
   return (
     <Container>
       <SideBar />
@@ -106,12 +121,14 @@ const CreatePanetone: React.FC = () => {
               </fieldset>
 
               {/* marca deve ser um select */}
-              <fieldset>
-                <legend>Marca</legend>
-                <Field type="text" name="marca" />
-                <section>{values.marca}</section>
-                <ErrorMessage name="marca" component="div" />
-              </fieldset>
+              <FieldSetSelect
+                name="marca"
+                label="Marca"
+                options={marcas.map((marca) => ({
+                  value: String(marca.id),
+                  label: marca.name,
+                }))}
+              />
 
               <button type="submit" disabled={isSubmitting}>
                 Submit
