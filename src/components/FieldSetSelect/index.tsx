@@ -16,9 +16,10 @@ const FieldSetSelect: React.FC<FieldSetSelectProps> = ({
   name,
   label,
   options,
+  ...rest
 }) => {
   return (
-    <Container>
+    <Container {...rest}>
       <label htmlFor={name}>{label}</label>
       <Field id={name} as="select" name={name}>
         {options.map((option, index) => (

@@ -3,12 +3,12 @@ import React from 'react';
 
 import { Container } from './styles';
 
-interface FieldSetText {
+interface FieldSetTextProps {
   name: string;
   label: string;
 }
 
-const FieldSetText: React.FC<FieldSetText> = ({ name, label, ...rest }) => {
+const FieldSetText: React.FC<FieldSetTextProps> = ({ name, label, ...rest }) => {
   return (
     <Container {...rest}>
       <label htmlFor={name}>{label}</label>

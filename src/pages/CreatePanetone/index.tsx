@@ -1,9 +1,11 @@
-import { ErrorMessage, Field, Form, Formik } from 'formik';
+import { Form, Formik } from 'formik';
 import React, { useEffect, useState } from 'react';
 import IMarca from '../../@types/IMarca';
+import FieldSetRange from '../../components/FieldSetRange';
 import FieldSetSelect from '../../components/FieldSetSelect';
 import FieldSetText from '../../components/FieldSetText';
 import SideBar from '../../components/SideBar';
+import getFormatCurrencyBR from '../../helpers/formatCurrency';
 import api from '../../services/api';
 
 import schema from './schemaValidation';
@@ -51,74 +53,34 @@ const CreatePanetone: React.FC = () => {
             }, 400);
           }}
         >
-          {({ isSubmitting, values }) => (
+          {({ isSubmitting }) => (
             <Form>
-              {/* name */}
               <FieldSetText name="name" label="Nome" />
 
-              {/* price */}
-              <fieldset>
-                <legend>Preço</legend>
-                <Field type="number" name="price" min={0} />
-                <section>{values.price}</section>
-                <ErrorMessage name="price" component="div" />
-              </fieldset>
+              <FieldSetRange
+                name="price"
+                label="Preço"
+                max={100}
+                format={getFormatCurrencyBR}
+              />
 
-              {/* flavor */}
-              <fieldset>
-                <legend>Sabor</legend>
-                <Field type="range" name="flavor" step="0.01" max={5} />
-                <section>{values.flavor}</section>
-                <ErrorMessage name="flavor" component="div" />
-              </fieldset>
+              <FieldSetRange name="flavor" label="Sabor" max={5} />
 
-              {/* texture */}
-              <fieldset>
-                <legend>Textura</legend>
-                <Field type="range" name="texture" />
-                <section>{values.texture}</section>
-                <ErrorMessage name="texture" component="div" />
-              </fieldset>
+              <FieldSetRange name="texture" label="Textura" max={5} />
 
-              {/* filling */}
-              <fieldset>
-                <legend>Recheio</legend>
-                <Field type="range" name="filling" />
-                <section>{values.filling}</section>
-                <ErrorMessage name="filling" component="div" />
-              </fieldset>
+              <FieldSetRange name="filling" label="Recheio" max={5} />
 
-              {/* packing */}
-              <fieldset>
-                <legend>Recheio</legend>
-                <Field type="range" name="packing" />
-                <section>{values.packing}</section>
-                <ErrorMessage name="packing" component="div" />
-              </fieldset>
+              <FieldSetRange name="packing" label="Embalagem" max={5} />
 
-              {/* costbenefit */}
-              <fieldset>
-                <legend>Custo-benefício</legend>
-                <Field type="range" name="costbenefit" />
-                <section>{values.costbenefit}</section>
-                <ErrorMessage name="costbenefit" component="div" />
-              </fieldset>
+              <FieldSetRange
+                name="costbenefit"
+                label="Custo-benefício"
+                max={5}
+              />
 
-              {/* grams */}
-              <fieldset>
-                <legend>Gramas</legend>
-                <Field type="number" name="grams" />
-                <section>{values.grams}</section>
-                <ErrorMessage name="grams" component="div" />
-              </fieldset>
+              <FieldSetRange name="grams" label="Gramas" max={5} />
 
-              {/* url */}
-              <fieldset>
-                <legend>Gramas</legend>
-                <Field type="url" name="url" />
-                <section>{values.url}</section>
-                <ErrorMessage name="url" component="div" />
-              </fieldset>
+              <FieldSetText name="url" label="Url da Imagem" />
 
               {/* marca deve ser um select */}
               <FieldSetSelect
