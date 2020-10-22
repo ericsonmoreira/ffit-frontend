@@ -1,7 +1,23 @@
+import { ErrorMessage, Field, Form, Formik } from 'formik';
 import React from 'react';
 import SideBar from '../../components/SideBar';
 
+import schema from './schemaValidation';
+
 import { Container, Content } from './styles';
+
+const initialValues = {
+  name: '',
+  price: 0,
+  flavor: 0, // nota do sabor
+  texture: 0, // nota da textura
+  filling: 0, // nota do recheio
+  packing: 0, // nota do pacote
+  costbenefit: 0, // nota do custo benefício
+  grams: 0,
+  url: '',
+  marca: '',
+};
 
 const CreatePanetone: React.FC = () => {
   return (
@@ -9,9 +25,105 @@ const CreatePanetone: React.FC = () => {
       <SideBar />
       <Content>
         <h1>CreatePanetone</h1>
-        
+        <Formik
+          initialValues={initialValues}
+          validationSchema={schema}
+          onSubmit={(values, { setSubmitting }) => {
+            setTimeout(() => {
+              alert(JSON.stringify(values, null, 2));
+              setSubmitting(false);
+            }, 400);
+          }}
+        >
+          {({ isSubmitting, values }) => (
+            <Form>
+              {/* name */}
+              <fieldset>
+                <legend>Nome</legend>
+                <Field type="text" name="name" />
+                <ErrorMessage name="name" component="div" />
+              </fieldset>
+
+              {/* price */}
+              <fieldset>
+                <legend>Preço</legend>
+                <Field type="range" name="price" />
+                <section>{values.price}</section>
+                <ErrorMessage name="price" component="div" />
+              </fieldset>
+
+              {/* flavor */}
+              <fieldset>
+                <legend>Sabor</legend>
+                <Field type="range" name="flavor" />
+                <section>{values.flavor}</section>
+                <ErrorMessage name="flavor" component="div" />
+              </fieldset>
+
+              {/* texture */}
+              <fieldset>
+                <legend>Textura</legend>
+                <Field type="range" name="texture" />
+                <section>{values.texture}</section>
+                <ErrorMessage name="texture" component="div" />
+              </fieldset>
+
+              {/* filling */}
+              <fieldset>
+                <legend>Recheio</legend>
+                <Field type="range" name="filling" />
+                <section>{values.filling}</section>
+                <ErrorMessage name="filling" component="div" />
+              </fieldset>
+
+              {/* packing */}
+              <fieldset>
+                <legend>Recheio</legend>
+                <Field type="range" name="packing" />
+                <section>{values.packing}</section>
+                <ErrorMessage name="packing" component="div" />
+              </fieldset>
+
+              {/* costbenefit */}
+              <fieldset>
+                <legend>Custo-benefício</legend>
+                <Field type="range" name="costbenefit" />
+                <section>{values.costbenefit}</section>
+                <ErrorMessage name="costbenefit" component="div" />
+              </fieldset>
+
+              {/* grams */}
+              <fieldset>
+                <legend>Gramas</legend>
+                <Field type="number" name="grams" />
+                <section>{values.grams}</section>
+                <ErrorMessage name="grams" component="div" />
+              </fieldset>
+
+              {/* url */}
+              <fieldset>
+                <legend>Gramas</legend>
+                <Field type="url" name="url" />
+                <section>{values.url}</section>
+                <ErrorMessage name="url" component="div" />
+              </fieldset>
+
+              {/* marca */}
+              <fieldset>
+                <legend>Marca</legend>
+                <Field type="text" name="marca" />
+                <section>{values.marca}</section>
+                <ErrorMessage name="marca" component="div" />
+              </fieldset>
+
+              <button type="submit" disabled={isSubmitting}>
+                Submit
+              </button>
+            </Form>
+          )}
+        </Formik>
       </Content>
-    </Container> 
+    </Container>
   );
 };
 
