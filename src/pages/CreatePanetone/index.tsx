@@ -1,5 +1,6 @@
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import React from 'react';
+import FieldSetText from '../../components/FieldSetText';
 import SideBar from '../../components/SideBar';
 
 import schema from './schemaValidation';
@@ -38,16 +39,12 @@ const CreatePanetone: React.FC = () => {
           {({ isSubmitting, values }) => (
             <Form>
               {/* name */}
-              <fieldset>
-                <legend>Nome</legend>
-                <Field type="text" name="name" />
-                <ErrorMessage name="name" component="div" />
-              </fieldset>
+              <FieldSetText name="name" label="Nome" />
 
               {/* price */}
               <fieldset>
                 <legend>Preço</legend>
-                <Field type="range" name="price" />
+                <Field type="number" name="price" min={0} />
                 <section>{values.price}</section>
                 <ErrorMessage name="price" component="div" />
               </fieldset>
@@ -55,7 +52,7 @@ const CreatePanetone: React.FC = () => {
               {/* flavor */}
               <fieldset>
                 <legend>Sabor</legend>
-                <Field type="range" name="flavor" />
+                <Field type="range" name="flavor" step="0.01" max={5} />
                 <section>{values.flavor}</section>
                 <ErrorMessage name="flavor" component="div" />
               </fieldset>
@@ -108,7 +105,7 @@ const CreatePanetone: React.FC = () => {
                 <ErrorMessage name="url" component="div" />
               </fieldset>
 
-              {/* marca */}
+              {/* marca deve ser um select */}
               <fieldset>
                 <legend>Marca</legend>
                 <Field type="text" name="marca" />
