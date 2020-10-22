@@ -11,8 +11,8 @@ const Routes: React.FC = () => {
       <Switch>
         <Route path="/" component={Landing} exact />
         <Route path="/app" component={Home} />
-        <Route path="/panetones/:id" component={Panetone} />
         <Route path="/panetones/add" component={CreatePanetone} />
+        <Route path="/panetones/:id" component={Panetone} />
       </Switch>
     </BrowserRouter>
   );
