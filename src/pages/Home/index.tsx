@@ -52,7 +52,7 @@ const Home: React.FC = () => {
             defaultValue=""
             onChange={handleChangeMarcaSelected}
           >
-            <option value="">Todas</option>
+            <option value="">Todas marcas</option>
             {marcas.map((marca) => (
               <option key={marca.id} value={marca.id}>
                 {marca.name}
