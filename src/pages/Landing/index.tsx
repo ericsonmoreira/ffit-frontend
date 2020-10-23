@@ -7,28 +7,16 @@ import {
   TitleWrapper,
   Title,
   SubTitle,
-  Location,
+  DevelopInfoWrapper,
   GoAppButton,
 } from './styles';
 
 import colors from '../../styles/colors';
 
 import boloImg from '../../images/bolo.svg';
-import useApi from '../../hooks/useApi';
-
-interface UserGithub {
-  name: string;
-  avatar_url: string;
-  html_url: string;
-}
+import DeveloperInfo from '../../components/DeveloperInfo';
 
 const Landing: React.FC = () => {
-  const { data: user } = useApi<UserGithub>(
-    'https://api.github.com/users/ericsonmoreira'
-  );
-
-  if (!user) return null;
-
   return (
     <Container>
       <Content>
@@ -42,12 +30,9 @@ const Landing: React.FC = () => {
             fotos (dos panetones) e com filtro (pelo menos filtrar por marca)
           </SubTitle>
         </TitleWrapper>
-        <Location>
-          <strong>{user.name}</strong>
-          <img src={user.avatar_url} alt="Github" />
-          <strong>Tabuleiro do Norte</strong>
-          <section>Ceará</section>
-        </Location>
+        <DevelopInfoWrapper>
+          <DeveloperInfo />
+        </DevelopInfoWrapper>
         <GoAppButton to="/app">
           <FiArrowRight size={24} color={colors.secondary} />
         </GoAppButton>

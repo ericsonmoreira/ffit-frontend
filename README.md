@@ -22,6 +22,7 @@ Puxando um pouco para meu ladro criatico, resolvi nomear essa aplicação de Cat
   - [Formik](https://formik.org/docs/overview)
   - [Yup](https://github.com/jquense/yup)
   - [SWR](https://swr.vercel.app/)
+  - [React Icons](https://react-icons.github.io/)
 - Depenências de Desenvolvimento:
-  - [eslint](https://eslint.org/)eslint
-  - json-server
+  - [Eslint](https://eslint.org/)eslint
+  - [JSON Server](https://github.com/typicode/json-server)
