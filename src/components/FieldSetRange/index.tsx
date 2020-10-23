@@ -24,7 +24,10 @@ const FieldSetRange: React.FC<FieldSetRangeProps> = ({
   const { values } = useFormikContext<any>();
   return (
     <Container {...rest}>
-      <label htmlFor={name}>{label}</label>
+      <section>
+        <label htmlFor={name}>{label}</label>
+        <section>{format ? format(values[name]) : values[name]}</section>
+      </section>
       <Field
         id={name}
         type="range"
@@ -33,7 +36,6 @@ const FieldSetRange: React.FC<FieldSetRangeProps> = ({
         max={max}
         step={step}
       />
-      <section>{format ? format(values[name]) : values[name]}</section>
       <ErrorMessage name={name} component="div" />
     </Container>
   );

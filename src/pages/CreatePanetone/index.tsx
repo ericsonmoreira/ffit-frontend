@@ -82,7 +82,6 @@ const CreatePanetone: React.FC = () => {
 
               <FieldSetText name="url" label="Url da Imagem" />
 
-              {/* marca deve ser um select */}
               <FieldSetSelect
                 name="marca"
                 label="Marca"
