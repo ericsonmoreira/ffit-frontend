@@ -54,8 +54,14 @@ export const Location = styled.div`
   top:0;
   right:0;
   text-align: right;
+  
   strong {
     font-size: 24px;
+  }
+
+  img {
+    width: 50px;
+    height: 50px;
   }
 `;
 

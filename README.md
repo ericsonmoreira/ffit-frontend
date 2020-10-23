@@ -17,10 +17,11 @@ Puxando um pouco para meu ladro criatico, resolvi nomear essa aplicação de Cat
 - Linguagem base: [TypeScript](https://www.typescriptlang.org/)
 - Framework: [ReactJS](https://reactjs.org/)
 - Dependências:
-  - axios
-  - formik
-  - styled-components
-  - yup
+  - [Axios](https://github.com/axios/axios)
+  - [styled-components](https://styled-components.com/)
+  - [Formik](https://formik.org/docs/overview)
+  - [Yup](https://github.com/jquense/yup)
+  - [SWR](https://swr.vercel.app/)
 - Depenências de Desenvolvimento:
-  - eslint
+  - [eslint](https://eslint.org/)eslint
   - json-server
