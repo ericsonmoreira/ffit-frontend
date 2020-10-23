@@ -1,12 +1,12 @@
 import { Formik } from 'formik';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import IMarca from '../../@types/IMarca';
 import FieldSetRange from '../../components/FieldSetRange';
 import FieldSetSelect from '../../components/FieldSetSelect';
 import FieldSetText from '../../components/FieldSetText';
 import SideBar from '../../components/SideBar';
 import getFormatCurrencyBR from '../../helpers/formatCurrency';
-import api from '../../services/api';
+import useApi from '../../hooks/useApi';
 
 import schema from './schemaValidation';
 
@@ -26,17 +26,9 @@ const initialValues = {
 };
 
 const CreatePanetone: React.FC = () => {
-  const [marcas, setMarcas] = useState<IMarca[]>([]);
+  const { data: marcas } = useApi<IMarca[]>('/marcas');
 
-  useEffect(() => {
-    try {
-      api.get('/marcas').then((response) => {
-        setMarcas((old) => [...old, ...response.data]);
-      });
-    } catch (erro) {
-      console.log(console.error(erro));
-    }
-  }, []);
+  if (!marcas) return null;
 
   return (
     <Container>
