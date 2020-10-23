@@ -43,7 +43,7 @@ const Home: React.FC = () => {
 
   return (
     <Container>
-      <SideBar />
+      <SideBar goAddButton />
       <Content>
         <h1>Catalottone</h1>
         <PanetonesList>
