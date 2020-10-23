@@ -1,5 +1,6 @@
 import React, { ChangeEvent, useEffect, useState } from 'react';
 import IPanetone from '../../@types/IPanetone';
+import IMarca from '../../@types/IMarca';
 import SideBar from '../../components/SideBar';
 import api from '../../services/api';
 
@@ -20,10 +21,18 @@ const Home: React.FC = () => {
 
   const [panetones, setPanetones] = useState<IPanetone[]>([]);
 
+  const [marcas, setMarcas] = useState<IMarca[]>([]);
+
+  const [marcaSelected, setMarcaSelected] = useState('');
+
   const [textSearchInput, setTextSearchInput] = useState('');
 
   function handleChangeTextSearchInput(event: ChangeEvent<HTMLInputElement>) {
     setTextSearchInput(event.target.value);
+  }
+
+  function handleChandeMarcaSelected(event: ChangeEvent<HTMLSelectElement>) {
+    setMarcaSelected(event.target.value);
   }
 
   useEffect(() => {
@@ -31,6 +40,10 @@ const Home: React.FC = () => {
       setLoading(true);
       api.get('/panetones').then((response) => {
         setPanetones((old) => [...old, ...response.data]);
+      });
+
+      api.get('/marcas').then((response) => {
+        setMarcas((old) => [...old, ...response.data]);
       });
     } catch (erro) {
       console.log(console.error(erro));
@@ -52,7 +65,21 @@ const Home: React.FC = () => {
             placeholder="Busque pelo nome"
             onChange={handleChangeTextSearchInput}
           />
+
+          <select defaultValue="" onChange={handleChandeMarcaSelected}>
+            <option value="">Todas</option>
+            {marcas.map((marca) => (
+              <option key={marca.id} value={marca.id}>
+                {marca.name}
+              </option>
+            ))}
+          </select>
+
           {panetones
+            .filter((panetone) => {
+              if (marcaSelected === '') return true;
+              return marcaSelected === String(panetone.marca.id);
+            })
             .filter((panetone) => panetone.name.includes(textSearchInput))
             .map((panetone) => (
               <PanetoneItem key={panetone.id}>
@@ -70,7 +97,6 @@ const Home: React.FC = () => {
             ))}
         </PanetonesList>
       </Content>
-      
     </Container>
   );
 };
