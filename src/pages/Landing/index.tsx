@@ -26,8 +26,11 @@ const Landing: React.FC = () => {
           <Title>Catalottone</Title>
           <SubTitle>O seu catálogo de panetones agora na internet</SubTitle>
           <SubTitle>
-            Uma lista de panetones de algumas marcas (Bauducco, Nestlé, etc) com
-            fotos (dos panetones) e com filtro (pelo menos filtrar por marca)
+            O panetone é um alimento tradicional da época de Natal, de origem
+            milanesa, região a noroeste da Itália. Várias lendas tentam explicar
+            a sua origem. O pão doce ou bolo de natal possui fragrância discreta
+            de baunilha e recheio de frutas secas, tais como damasco, laranja,
+            limão, maçã, cidra e a uva passa.
           </SubTitle>
         </TitleWrapper>
         <DevelopInfoWrapper>

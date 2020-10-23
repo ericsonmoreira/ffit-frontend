@@ -43,10 +43,11 @@ export const Title = styled.h1`
 `;
 
 export const SubTitle = styled.h2`
-  font-size: 18px;
-  width: 300px;
+  font-size: 16px;
+  width: 600px;
   font-weight: 600;
   line-height: 20px;
+  margin: 10px 0px;
 `;
 
 export const DevelopInfoWrapper = styled.div`
