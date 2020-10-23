@@ -31,3 +31,15 @@ Puxando um pouco para meu ladro criatico, resolvi nomear essa aplicação de Cat
 - Depenências de Desenvolvimento:
   - [Eslint](https://eslint.org/): Uma ferramenta de análise de código estática para identificar padrões problemáticos encontrados no código JavaScript.
   - [JSON Server](https://github.com/typicode/json-server): Um biblioteca que permite criar um webservice REST JSON simulando uma API.
+
+## Como testar
+
+Primeiramente, faça o _download_ do projeto. Entre na pasta do projeto e execute o comando para instalar as dependências do projeto:
+
+```bash
+# caso use npm
+npm install
+
+# caso use yarn
+yarn
+  ```
