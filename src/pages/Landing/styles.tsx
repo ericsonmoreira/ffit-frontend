@@ -63,8 +63,8 @@ export const GoAppButton = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 48px;
-  width: 48px;
+  height: 80px;
+  width: 80px;
   border-radius: 16px;
   background: ${colors.yellow};
   transition: background-color 0.2s;

@@ -34,7 +34,7 @@ const Landing: React.FC = () => {
           <DeveloperInfo />
         </DevelopInfoWrapper>
         <GoAppButton to="/app">
-          <FiArrowRight size={24} color={colors.secondary} />
+          <FiArrowRight size={36} color={colors.secondary} />
         </GoAppButton>
       </Content>
     </Container>
