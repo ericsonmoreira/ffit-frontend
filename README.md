@@ -13,3 +13,14 @@ Puxando um pouco para meu ladro criatico, resolvi nomear essa aplicação de Cat
 3. Tela de detalhamento contendo informações detalhadas do panetone selecionado (ex: peso, informações nutricionais, preço - esses dados podem ser totalmente fictícios).
 
 ## O que foi usado
+
+- Linguagem base: [TypeScript](https://www.typescriptlang.org/)
+- Framework: [ReactJS](https://reactjs.org/)
+- Dependências:
+  - axios
+  - formik
+  - styled-components
+  - yup
+- Depenências de Desenvolvimento:
+  - eslint
+  - json-server
