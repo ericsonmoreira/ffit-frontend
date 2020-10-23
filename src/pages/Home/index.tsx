@@ -1,8 +1,7 @@
-import React, { ChangeEvent, useEffect, useState } from 'react';
+import React, { ChangeEvent, useState } from 'react';
 import IPanetone from '../../@types/IPanetone';
 import IMarca from '../../@types/IMarca';
 import SideBar from '../../components/SideBar';
-import api from '../../services/api';
 
 import {
   Container,
@@ -16,13 +15,12 @@ import {
 } from './styles';
 
 import { FiMoreHorizontal } from 'react-icons/fi';
+import useApi from '../../hooks/useApi';
 
 const Home: React.FC = () => {
-  const [loading, setLoading] = useState(true);
+  const { data: panetones } = useApi<IPanetone[]>('/panetones');
 
-  const [panetones, setPanetones] = useState<IPanetone[]>([]);
-
-  const [marcas, setMarcas] = useState<IMarca[]>([]);
+  const { data: marcas } = useApi<IMarca[]>('/panetones');
 
   const [marcaSelected, setMarcaSelected] = useState('');
 
@@ -36,24 +34,7 @@ const Home: React.FC = () => {
     setMarcaSelected(event.target.value);
   }
 
-  useEffect(() => {
-    try {
-      setLoading(true);
-      api.get('/panetones').then((response) => {
-        setPanetones((old) => [...old, ...response.data]);
-      });
-
-      api.get('/marcas').then((response) => {
-        setMarcas((old) => [...old, ...response.data]);
-      });
-    } catch (erro) {
-      console.log(console.error(erro));
-    } finally {
-      setLoading(false);
-    }
-  }, []);
-
-  if (loading) return null;
+  if (!panetones || !marcas) return null;
 
   return (
     <Container>

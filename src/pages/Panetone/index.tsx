@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useParams } from 'react-router-dom';
 import IPanetone from '../../@types/IPanetone';
 import SideBar from '../../components/SideBar';
 import getFinalScore from '../../helpers/finalScore';
 import getFormatCurrencyBR from '../../helpers/formatCurrency';
-import api from '../../services/api';
+import useApi from '../../hooks/useApi';
 
 import { Container, Content, Title, Details, Info, FinalScore } from './styles';
 
@@ -15,23 +15,9 @@ interface PanetoneRouterProps {
 const Panetone: React.FC = () => {
   const { id } = useParams<PanetoneRouterProps>();
 
-  const [loading, setLoading] = useState(true);
-  const [panetone, setPanetone] = useState<IPanetone>();
+  const { data: panetone } = useApi<IPanetone>(`/panetones/${id}`);
 
-  useEffect(() => {
-    try {
-      setLoading(true);
-      api.get(`/panetones/${id}`).then((response) => {
-        setPanetone(response.data);
-      });
-    } catch (error) {
-      console.log(error);
-    } finally {
-      setLoading(false);
-    }
-  }, [id]);
-
-  if (loading) return null;
+  if (!panetone) return null;
 
   return (
     <Container>
