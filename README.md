@@ -42,4 +42,30 @@ npm install
 
 # caso use yarn
 yarn
-  ```
+```
+
+Agora copie o arquivo _.exemple.env_ para um _.env_:
+
+```bash
+cp .exemple.env .env
+```
+
+Agora, como foi usado **JSON Server** para simular uma API Rest, foi inserido um _script_ no _package.json_ para colocar a API Fake em funcionamento:
+
+```bash
+# caso use npm
+npm run api:fake
+
+# caso use yarn
+yarn api:fake
+```
+
+Por fim, coloque o projeto para funcionar:
+
+```bash
+# caso use npm
+npm start
+
+# caso use yarn
+yarn start
+```
