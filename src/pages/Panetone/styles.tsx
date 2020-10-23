@@ -34,7 +34,8 @@ export const Details = styled.div`
     width: 100%;
     height: 300px;
     object-fit: cover;
-    border-radius: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
     background: ${colors.secondary};
   }
 

@@ -84,6 +84,19 @@ export const SearchInput = styled.input`
   border: none;
 `;
 
+export const SelectMarcaSearch = styled.select`
+  padding: 10px;
+  height: 40px;
+  width: 100%;
+  border-radius: 20px;
+  border: none;
+  font-size: 16px;
+  color: ${colors.primary};
+  font-weight: 600;
+  margin-bottom: 20px;
+  outline: none;
+`;
+
 export const GoToDetailsButton = styled(Link)`
   display: flex;
   justify-content: center;

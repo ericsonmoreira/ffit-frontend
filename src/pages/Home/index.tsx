@@ -11,6 +11,7 @@ import {
   PanetoneLabel,
   PanetoneItem,
   SearchInput,
+  SelectMarcaSearch,
   GoToDetailsButton,
 } from './styles';
 
@@ -31,7 +32,7 @@ const Home: React.FC = () => {
     setTextSearchInput(event.target.value);
   }
 
-  function handleChandeMarcaSelected(event: ChangeEvent<HTMLSelectElement>) {
+  function handleChangeMarcaSelected(event: ChangeEvent<HTMLSelectElement>) {
     setMarcaSelected(event.target.value);
   }
 
@@ -66,14 +67,17 @@ const Home: React.FC = () => {
             onChange={handleChangeTextSearchInput}
           />
 
-          <select defaultValue="" onChange={handleChandeMarcaSelected}>
+          <SelectMarcaSearch
+            defaultValue=""
+            onChange={handleChangeMarcaSelected}
+          >
             <option value="">Todas</option>
             {marcas.map((marca) => (
               <option key={marca.id} value={marca.id}>
                 {marca.name}
               </option>
             ))}
-          </select>
+          </SelectMarcaSearch>
 
           {panetones
             .filter((panetone) => {

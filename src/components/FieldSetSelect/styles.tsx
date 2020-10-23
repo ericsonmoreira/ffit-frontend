@@ -25,6 +25,7 @@ export const Container = styled.fieldset`
       font-size: 16px;
       color: ${colors.primary};
       font-weight: 600;
+      outline: none;
     }
   }
 
