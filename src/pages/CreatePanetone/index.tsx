@@ -6,6 +6,7 @@ import FieldSetSelect from '../../components/FieldSetSelect';
 import FieldSetText from '../../components/FieldSetText';
 import SideBar from '../../components/SideBar';
 import getFormatCurrencyBR from '../../helpers/formatCurrency';
+import getFormatGrams from '../../helpers/formatGrams';
 import useApi from '../../hooks/useApi';
 
 import schema from './schemaValidation';
@@ -70,7 +71,13 @@ const CreatePanetone: React.FC = () => {
                 max={5}
               />
 
-              <FieldSetRange name="grams" label="Gramas" max={5} />
+              <FieldSetRange
+                name="grams"
+                label="Gramas"
+                max={1000}
+                step={1}
+                format={getFormatGrams}
+              />
 
               <FieldSetText name="url" label="URL da Imagem" />
 
