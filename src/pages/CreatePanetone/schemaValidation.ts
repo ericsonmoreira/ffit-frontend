@@ -23,7 +23,9 @@ const schema = Yup.object().shape({
   grams: Yup.number()
     .required('Campo Obrigatório')
     .positive('Precisar ser um número positivo'),
-  url: Yup.string().url().required('Campo Obrigatório'),
+  url: Yup.string()
+    .url('É necessário uma URL válida')
+    .required('Campo Obrigatório'),
   marca: Yup.string().required('Campo Obrigatório'),
 });
 

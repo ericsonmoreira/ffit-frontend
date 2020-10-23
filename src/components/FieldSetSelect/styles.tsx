@@ -7,17 +7,28 @@ export const Container = styled.fieldset`
   flex-direction: column;
   padding: 16px;
   border: none;
-  div {
-    color: ${colors.error};
+
+  section {
+    display: flex;
+    align-items: center;
+
+    label {
+      margin-right: 10px;
+    }
+
+    select {
+      flex:1;
+      padding: 10px;
+      height: 40px;
+      border-radius: 20px;
+      border: none;
+      font-size: 16px;
+      color: ${colors.primary};
+      font-weight: 600;
+    }
   }
 
-  select {
-    padding: 10px;
-    height: 40px;
-    border-radius: 20px;
-    border: none;
-    font-size: 16px;
-    color: ${colors.primary};
-    font-weight: 600;
+  div {
+    color: ${colors.error};
   }
 `;

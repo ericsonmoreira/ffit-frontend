@@ -1,4 +1,4 @@
-import { Form, Formik } from 'formik';
+import { Formik } from 'formik';
 import React, { useEffect, useState } from 'react';
 import IMarca from '../../@types/IMarca';
 import FieldSetRange from '../../components/FieldSetRange';
@@ -10,7 +10,7 @@ import api from '../../services/api';
 
 import schema from './schemaValidation';
 
-import { Container, Content } from './styles';
+import { Container, Content, SaveButton, FormPanetone } from './styles';
 
 const initialValues = {
   name: '',
@@ -54,7 +54,7 @@ const CreatePanetone: React.FC = () => {
           }}
         >
           {({ isSubmitting }) => (
-            <Form>
+            <FormPanetone>
               <FieldSetText name="name" label="Nome" />
 
               <FieldSetRange
@@ -80,7 +80,7 @@ const CreatePanetone: React.FC = () => {
 
               <FieldSetRange name="grams" label="Gramas" max={5} />
 
-              <FieldSetText name="url" label="Url da Imagem" />
+              <FieldSetText name="url" label="URL da Imagem" />
 
               <FieldSetSelect
                 name="marca"
@@ -91,10 +91,10 @@ const CreatePanetone: React.FC = () => {
                 }))}
               />
 
-              <button type="submit" disabled={isSubmitting}>
-                Submit
-              </button>
-            </Form>
+              <SaveButton type="submit" disabled={isSubmitting}>
+                Salvar Panetone
+              </SaveButton>
+            </FormPanetone>
           )}
         </Formik>
       </Content>
