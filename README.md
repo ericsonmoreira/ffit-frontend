@@ -1,10 +1,10 @@
 # FFIT - Processo seletivo
 
-Esse projeto consiste no desenvolvimento de uma aplicação que simula um _"Catálogo de Panetones"_.
+Esse projeto consiste no desenvolvimento de uma aplicação que simula um **"Catálogo de Panetones"**.
 
 ## Catalottone - Seu Catálogo de Panetones
 
-Puxando um pouco para meu ladro criatico, resolvi nomear essa aplicação de Catalottone, fazendo assim uma alusçào a combinação das palavras _catálogo_ e _panetone_. Todos os dados fictícios foram obtidos dessa [referência](https://www.huffpostbrasil.com/entry/os-melhores-panettones-natal_br_5dfd0382e4b05b08bab4fd7b).
+Nomeamos essa aplicação de **Catalottone**, fazendo assim uma alusçào a combinação das palavras _catálogo_ e _panetone_. Todos os dados fictícios foram obtidos dessa [referência](https://www.huffpostbrasil.com/entry/os-melhores-panettones-natal_br_5dfd0382e4b05b08bab4fd7b).
 
 ## Requisitos funcionais
 
@@ -30,13 +30,13 @@ Puxando um pouco para meu ladro criatico, resolvi nomear essa aplicação de Cat
   - [React Icons](https://react-icons.github.io/): Um pacote muito utilizado no desenvolvimento de aplicações React, o mesmo provem a junção de bibliotecas de icones famosos.
 - Depenências de Desenvolvimento:
   - [Eslint](https://eslint.org/): Uma ferramenta de análise de código estática para identificar padrões problemáticos encontrados no código JavaScript.
-  - [JSON Server](https://github.com/typicode/json-server): Um biblioteca que permite criar um webservice REST JSON simulando uma API.
+  - [JSON Server](https://github.com/typicode/json-server): Um pacote que permite criar um webservice REST JSON simulando uma API.
 
 ## Como testar
 
 Primeiramente, faça o _download_ do projeto. Entre na pasta do projeto e execute o comando para instalar as dependências do projeto:
 
-```bash
+```BASH
 # caso use npm
 npm install
 
@@ -46,13 +46,13 @@ yarn
 
 Agora copie o arquivo _.exemple.env_ para um _.env_:
 
-```bash
+```BASH
 cp .exemple.env .env
 ```
 
 Agora, como foi usado **JSON Server** para simular uma API Rest, foi inserido um _script_ no _package.json_ para colocar a API Fake em funcionamento:
 
-```bash
+```BASH
 # caso use npm
 npm run api:fake
 
@@ -62,10 +62,50 @@ yarn api:fake
 
 Por fim, coloque o projeto para funcionar:
 
-```bash
+```BASH
 # caso use npm
 npm start
 
 # caso use yarn
 yarn start
+```
+
+## Páginas
+
+Catalottone é separado em 4 páginas:
+
+- **Landing**: Página de apresentação do Catalottone.
+- **Home**: Listagem do panetones juntamente com filtragem por nome e marca.
+- **Panetone**: Detalhes de um panetones jutamente com o cálculo de sua nota final.
+- **CreatePanetone**: Pagína que simula o cadastramaneto de um panetone.
+
+## API
+
+Nesse projeto foi usado um pacote que faz a simulação de dados a partir de um arquivo **JSON**. Em _db.json_, na raiz do projeto, está a base de dados que a API simulada disponibiliza. São dois tipos de dados que usamos: _Panetone_ e _Marca_.
+
+Exemplos de objetos _Panetone_ e _Marca_:
+
+```JSON
+// Panetone
+{
+  "id": 1,
+  "name": "Panettone de Cocada da Sodiê",
+  "price": 54.9,
+  "flavor": 3,
+  "texture": 3,
+  "filling": 3,
+  "packing": 3.6,
+  "costbenefit": 3,
+  "grams": 700,
+  "url": "https://img.huffingtonpost.com/asset/5dfd2b732400001e135a4020.jpeg?ops=scalefit_720_noupscale&format=webp",
+  "marca": {
+    "id": 1,
+    "name": "Sodiê"
+  }
+}
+// Marca
+{
+  "id": 1,
+  "name": "Sodiê"
+}
 ```
