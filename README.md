@@ -109,13 +109,13 @@ Exemplos de objetos _Panetone_ e _Marca_:
 {
   "id": 1,
   "name": "Panettone de Cocada da Sodiê",
-  "price": 54.9,    // 0 a 100
-  "flavor": 3,      // 0 a 5
-  "texture": 3,     // 0 a 5
-  "filling": 3,     // 0 a 5
-  "packing": 3.6,   // 0 a 5
-  "costbenefit": 3, // 0 a 5
-  "grams": 700,     // 0 a 1000
+  "price": 54.9,
+  "flavor": 3,
+  "texture": 3,
+  "filling": 3,
+  "packing": 3.6,
+  "costbenefit": 3,
+  "grams": 700,
   "url": "https://img.huffingtonpost.com/asset/5dfd2b732400001e135a4020.jpeg?ops=scalefit_720_noupscale&format=webp",
   "marca": {
     "id": 1,
