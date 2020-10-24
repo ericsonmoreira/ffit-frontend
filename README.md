@@ -74,10 +74,29 @@ yarn start
 
 Catalottone é separado em 4 páginas:
 
-- **Landing**: Página de apresentação do Catalottone.
-- **Home**: Listagem do panetones juntamente com filtragem por nome e marca.
-- **Panetone**: Detalhes de um panetones jutamente com o cálculo de sua nota final.
-- **CreatePanetone**: Pagína que simula o cadastramaneto de um panetone.
+### Landing Page
+
+Essa é página para apresentação do app. Nela podemos ver o que é um **Panetone**.
+
+![Landing Page](.github/images/landing_page.png)
+
+### Home Page
+
+Aqui temos a listagem do catálogo com filtos por **nome** e **marca** dos Panetones. Em casa card que agrupa a **imagem**, **nome** e **marca** do Panetone, temos um botão que leva o usuário para a página de detalhes.
+
+![Home Page](.github/images/home_page.png)
+
+### Details Page
+
+Aqui podemos ver os detalhes do Panetone selecionado na **Home Page**.
+
+![Details Page](.github/images/details_page.png)
+
+### Create Panetone Page
+
+Página para simular o cadastramento de um Panetone no app. Essa simulação também apresenta algumas validações de dados (aqui foram usados os pacotes [Formik](https://formik.org/docs/overview) e [Yup](https://github.com/jquense/yup) conjuntamente).
+
+![Details Page](.github/images/create_panetone_page.png)
 
 ## API
 
@@ -90,13 +109,13 @@ Exemplos de objetos _Panetone_ e _Marca_:
 {
   "id": 1,
   "name": "Panettone de Cocada da Sodiê",
-  "price": 54.9,
-  "flavor": 3,
-  "texture": 3,
-  "filling": 3,
-  "packing": 3.6,
-  "costbenefit": 3,
-  "grams": 700,
+  "price": 54.9,    // 0 a 100
+  "flavor": 3,      // 0 a 5
+  "texture": 3,     // 0 a 5
+  "filling": 3,     // 0 a 5
+  "packing": 3.6,   // 0 a 5
+  "costbenefit": 3, // 0 a 5
+  "grams": 700,     // 0 a 1000
   "url": "https://img.huffingtonpost.com/asset/5dfd2b732400001e135a4020.jpeg?ops=scalefit_720_noupscale&format=webp",
   "marca": {
     "id": 1,
